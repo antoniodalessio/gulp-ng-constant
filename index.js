@@ -25,7 +25,8 @@ var defaults = {
   wrapFooter: null,
   indent: '',
   template: undefined,
-  templatePath: TEMPLATE_PATH
+  templatePath: TEMPLATE_PATH,
+  comment: ''
 };
 
 function ngConstantPlugin(opts) {
@@ -56,7 +57,8 @@ function ngConstantPlugin(opts) {
         moduleName: getModuleName(data, options, file),
         deps:       getModuleDeps(data, options),
         constants:  getConstants(data, options),
-        indent:     options.indent
+        indent:     options.indent,
+        comment:    "/* " + options.comment + " */\n"
       });
 
       // Handle wrapping
