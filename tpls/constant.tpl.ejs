@@ -1,2 +1,3 @@
+<%= comment %>
 angular.module("<%- moduleName %>"<% if (deps) { %>, ${JSON.stringify(deps)}<% } %>)
 <% constants.forEach(function(constant) { %>${indent}.constant("<%- constant.name %>", ${constant.value})<%= _.last(constants) === constant ? '' : '\n' %><% }) %>;
